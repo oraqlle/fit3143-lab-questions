@@ -1,0 +1,6 @@
+[book]
+authors = ["oraqlle"]
+language = "en"
+multilingual = false
+src = "src"
+title = "FIT3143 - Lab and Applied Questions"
