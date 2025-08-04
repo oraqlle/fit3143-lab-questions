@@ -1,6 +1,7 @@
 # Summary
 
 - [Introduction](./intro.md)
+<!--
 - [Applieds]()
     - [Applied 1 (Week 1) \[Not Marked\]](./applied_01.md)
     - [Applied 2 (Week 3)](./applied_02.md)
@@ -8,6 +9,7 @@
     - [Applied 4 (Week 7)](./applied_04.md)
     - [Applied 5 (Week 9)](./applied_05.md)
     - [Applied 6 (Week 11)](./applied_06.md)
+-->
 
 - [Labs]()
     - [Lab 1 (Week 2) \[Not Marked\]](./lab_01.md)
