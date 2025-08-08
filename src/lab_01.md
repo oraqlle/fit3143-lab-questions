@@ -112,35 +112,34 @@ The following program, sine.c, computes a table of the sine function for angles 
 and 360 degrees.
 
 ```c
-/************************/
 /* Table of Sine Function
-/************************/
-/* Michel Vallieres */
-/* Written: Winter 1995 */
+ * Michel Vallieres
+ * Written: Winter 1995
+ */
 
 #include <stdio.h>
 #include <math.h>
 
 int main() {
-    int angle_degree;
-    double angle_radian, pi, value;
-
-    /* Print a header */
+    // Print a header
     printf("\nCompute a table of the sine function\n\n");
 
-    /* obtain pi once for all */​
-    /* or just use pi = M_PI, where M_PI is defined in math.h​ */
-    pi = 4.0 * atan(1.0);
+    // obtain pi once for all
+    // or just use pi = M_PI, where M_PI is defined in math.h
+    double pi = 4.0 * atan(1.0);
     printf(" Value of PI = %f \n\n", pi);
     printf(" angle Sine \n");
-    angle_degree = 0; /* initial angle value​ */
 
-    /* scan over angle */
+    double angle_radian = 0.0;
+    double value = 0.0;
+    int angle_degree = 0; // initial angle value
+
+    // scan over angle
     while (angle_degree <= 360) /* loop until angle_degree > 360 */ {
         angle_radian = pi * angle_degree / 180.0;
         value = sin(angle_radian);
         printf(" %3d​ %f \n ", angle_degree, value);
-        angle_degree = angle_degree + 10; /* increment the loop index */
+        angle_degree = angle_degree + 10; // increment the loop index
     }
 
     return 0;
@@ -492,7 +491,7 @@ conditionals. Conditionals are logical operations involving comparison of quanti
 < smaller than
 <= smaller than or equal to
 == equal to
-!= not equal to​
+!= not equal to
 >= greater than or equal to
 > greater than
 ```
@@ -565,30 +564,34 @@ an array is just a pointer to its first element. Consider the following code:
 #include <stdio.h>
 
 int main() {
-    char text_1[100], text_2[100], text_3[100];
-    char *ta, *tb;
-    int i;
+    char text_1[100];
+    char text_2[100]
+    char text_3[100];
 
-    /* set message to be an array */
-    /* of characters; initialize it */
-    /* to the constant string "..." */
-    /* let the compiler decide on */
-    /* its size by using []​ */
+    char *ta = NULL;
+    char *tb = NULL;
+
+    /* set message to be an array
+     * of characters; initialize it 
+     * to the constant string "..." 
+     * let the compiler decide on 
+     * its size by using [] 
+     */
     char message[] = "Hello, I am a string; what are you?";
     printf("Original message: %s\n", message);
 
-    /* copy the message to text_1 */
-    /* the hard way */
-    i=0;
+    // copy the message to text_1 the hard way
+    int i = 0;
     while ((text_1[i] = message[i]) != '\0') { i++; }
 
     printf("Text_1: %s\n", text_1);
 
-    /* use explicit pointer arithmetic */
+    // use explicit pointer arithmetic
     ta=message;
     tb=text_2;
     while ((*tb++ = *ta++) != '\0');
     printf("Text_2: %s\n", text_2);
+
     return 0;
 }
 ```
@@ -658,10 +661,9 @@ character at a time to `stdout`. For example, consider
 #include <stdio.h>
 
 int main() {
-    int i, nc;
-    nc = 0;
+    int nc = 0;
+    int i = getchar();
 
-    i = getchar();
     while (i != EOF) {
         nc = nc + 1;
         i = getchar();
@@ -688,7 +690,8 @@ example as:
 #include <stdio.h>
 
 int main() {
-    int c, nc = 0;
+    int c = 0;
+    int nc = 0;
     while ((c = getchar()) != EOF) nc++;
     printf("Number of characters in file = %d\n", nc);
     return 0;
@@ -710,7 +713,10 @@ considered as your own `wc`. Let's add a counter for the lines.
 #include <stdio.h>
 
 int main() {
-    int c, nc = 0, nl = 0;
+    int c = 0;
+    int nc = 0;
+    int nl = 0;
+
     while ((c = getchar()) != EOF) {
         nc++;
         if (c == '\n') { nl++; }
@@ -920,7 +926,7 @@ what happen if the variables are passed by value:
 void exchange(int a, int b);
 
 int main() {
-    /* WRONG CODE */
+    // WRONG CODE
     int a, b;
     a = 5;
     b = 7;
@@ -1014,8 +1020,9 @@ The following program simply prints out its own name and arguments:
 
 ```c
 #include <stdio.h>
+
 int main(int argc, char** argv) {
-    int i;
+    int i = 0;
     printf("argc = %d\n", argc);
 
     for (i = 0; i < argc; i++) {
