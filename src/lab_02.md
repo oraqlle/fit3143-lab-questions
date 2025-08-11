@@ -3,8 +3,8 @@
 ## Task 1 – Serial Code - Finding Prime Numbers [*Pre-class activities*]
 
 Write a serial C program to search for prime numbers which are strictly less than an
-integer \((n\\), provided by the user. The program should print to the standard output a list
-of all prime numbers found.
+integer \\((n\\), provided by the user. The program should print to the standard output a
+list of all prime numbers found.
 
 ### Example
 
@@ -22,10 +22,16 @@ a text file.
   equals \\(k\\). Will both \\(m\\) and \\(n\\) be larger than the square root of
   \\(k\\)? No! If \\(m\\) is larger than the square root of \\(k\\), then \\(n\\) must be
   smaller than the square root of \\(k\\), right?
-- In other words, you don't need to check until \\(k – 1) (think what happens when
+- In other words, you don't need to check until \\(k – 1)\\) (think what happens when
   \\(k\\) is really large).
-- For C: Make sure you know how to use the `sqrt()` of `math.h` and compile using the 
-  `-lm` flag of gcc.
+- Make sure you know how to use the [`sqrt()`]()
+  from the `math.h` header
+- Ensure you link the standard math library `libm.so.*` using the `-l` flag for `gcc` eg.
+  `gcc -lm -o task1 task1.c`
+
+> Note the `lib` prefix as well as file extension (`*.so` or `*.a` on Linux) of libraries
+> linked by `gcc` (or `clang`) is omitted when using the `-l` flag. Only the library name
+> is needed.
 
 Measure the time required to search for prime numbers less than an integer \\(n\\) when
 \\(n = 1,000,000\\). You will need to explain your approach, demonstrate and run your
