@@ -24,9 +24,9 @@ a text file.
   smaller than the square root of \\(k\\), right?
 - In other words, you don't need to check until \\(k – 1)\\) (think what happens when
   \\(k\\) is really large).
-- Make sure you know how to use the [`sqrt()`]()
+- Make sure you know how to use the [`sqrt()`](https://en.cppreference.com/w/cpp/numeric/math/sqrt)
   from the `math.h` header
-- Ensure you link the standard math library `libm.so.*` using the `-l` flag for `gcc` eg.
+- Ensure you link the standard math library `libm.so` using the `-l` flag for `gcc` eg.
   `gcc -lm -o task1 task1.c`
 
 > Note the `lib` prefix as well as file extension (`*.so` or `*.a` on Linux) of libraries
