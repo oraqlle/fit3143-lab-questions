@@ -4,3 +4,6 @@ language = "en"
 multilingual = false
 src = "src"
 title = "FIT3143 - Lab and Applied Questions"
+
+[output.html]
+mathjax-support = true
